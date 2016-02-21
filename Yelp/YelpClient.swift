@@ -10,7 +10,7 @@ import UIKit
 
 import AFNetworking
 import BDBOAuth1Manager
-
+import CoreLocation
 // You can register for Yelp API keys here: http://www.yelp.com/developers/manage_api_keys
 let yelpConsumerKey = "vxKwwcR_NMQ7WaEiQBK_CA"
 let yelpConsumerSecret = "33QCvh5bIF5jIHR5klQr7RtBDhQ"
@@ -59,7 +59,9 @@ class YelpClient: BDBOAuth1RequestOperationManager {
         // For additional parameters, see http://www.yelp.com/developers/documentation/v2/search_api
 
         // Default the location to San Francisco
-        var parameters: [String : AnyObject] = ["term": term, "ll": "37.785771,-122.406165"]
+      
+        
+        var parameters: [String : AnyObject] = ["term": term, "ll": "40.9142, -73.1162"]
 
         if sort != nil {
             parameters["sort"] = sort!.rawValue
